@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CliniQ | Video Consulting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        body {
+          background: #f5f9ff;
+          font-family: 'Segoe UI', sans-serif;
+        }
+    
+        .section-title {
+          color: #007bff;
+          margin-bottom: 2rem;
+        }
+    
+        .doctor-card {
+          border-radius: 15px;
+          transition: transform 0.3s ease;
+          text-align: center;
+          background-color: #fff;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+          padding: 1.5rem;
+          margin: 0 10px;
+          min-width: 250px;
+        }
+    
+        .doctor-card:hover {
+          transform: translateY(-5px);
+        }
+    
+        .doctor-card img {
+          height: 120px;
+          width: 120px;
+          object-fit: fill;
+          border-radius: 50%;
+          margin-bottom: 1rem;
+        }
+    
+        .doctor-card h5 {
+          color: #007bff;
+        }
+    
+        .btn-outline-success, .btn-outline-primary {
+          width: 100%;
+          margin-top: 0.5rem;
+        }
+    
+        .carousel-caption {
+          background: rgba(0, 123, 255, 0.5);
+          border-radius: 10px;
+          padding: 1rem;
+        }
+        
+        .doctors-container {
+          display: flex;
+          overflow-x: auto;
+          padding: 15px 0;
+          scrollbar-width: thin;
+          scrollbar-color: #007bff #f5f9ff;
+        }
+        
+        .doctors-container::-webkit-scrollbar {
+          height: 8px;
+        }
+        
+        .doctors-container::-webkit-scrollbar-track {
+          background: #f5f9ff;
+          border-radius: 10px;
+        }
+        
+        .doctors-container::-webkit-scrollbar-thumb {
+          background-color: #007bff;
+          border-radius: 10px;
+        }
+        
+        .doctors-container-wrapper {
+          position: relative;
+        }
+        
+        .scroll-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: white;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          cursor: pointer;
+          z-index: 1;
+        }
+        
+        .scroll-left {
+          left: -20px;
+        }
+        
+        .scroll-right {
+          right: -20px;
+        }
+        
+        @media (min-width: 992px) {
+          .doctors-container {
+            flex-wrap: wrap;
+            overflow-x: visible;
+            justify-content: center;
+          }
+          
+          .doctor-card {
+            flex: 0 0 calc(33.333% - 20px);
+            margin: 10px;
+          }
+          
+          .scroll-arrow {
+            display: none;
+          }
+        }
+    
+        @media (max-width: 576px) {
+          .doctor-card img {
+            height: 120px;
+            width: 120px;
+          }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container">
+    <!-- Logo and Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="./image/CliniQ Logo with Light Accents.png" alt="CliniQ Logo" width="40" height="40" class="me-2 rounded-circle">
+      <span class="text-white fw-bold fs-4">CliniQ</span>
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="video_consulting.html"><strong>Video Consulting</strong></a></li>
+        <!-- <li class="nav-item"><a class="nav-link text-white" href="registration.html">Register</a></li> -->
+        <!-- <li class="nav-item"><a class="nav-link text-white" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact Us</a></li> -->
+        <li class="nav-item"><a class="nav-link text-white" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Carousel Section -->
+    <div id="clinicCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./image/ColourfullclicQ.jpg" class="d-block w-100" alt="Clinic Overview" style="height: 450px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Welcome to CliniQ</h5>
+                    <p>Your Health, Our Priority</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./image/DoctorGroups1.jpg" class="d-block w-100" alt="Modern Facilities" style="height: 450px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Expert Doctors</h5>
+                    <p>Consult top specialists online</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./image/Doctorvideocalling.jpg" class="d-block w-100" alt="Friendly Staff" style="height: 450px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Seamless Experience</h5>
+                    <p>From booking to video consults</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center"><i class="bi bi-people-fill me-2"></i>Our Featured Doctors</h2>
+
+            <div class="doctors-container-wrapper">
+                <div class="doctors-container" id="doctorsContainer">
+                    <!-- Doctor Card Template -->
+                    <div class="doctor-card">
+                        <img src="./image/doctor-with-his-arms-crossed-white-background.webp" alt="Dr. Aarti Sharma">
+                        <h5>Dr. Aarti Sharma</h5>
+                        <p class="text-muted small">MBBS, MD - Dermatology</p>
+                        <a href="appointment.html" class="btn btn-outline-primary btn-sm">Offline Consultation - Book Appointment</a>
+                        <a href="tel:+911234567890" class="btn btn-outline-primary btn-sm">📞 Call</a>
+                        <a href="https://meet.google.com/abc-defg-hij" target="_blank" class="btn btn-outline-success btn-sm">🎥 Video</a>
+                    </div>
+
+                    <div class="doctor-card">
+                        <img src="./image/doctor-with-his-arms-crossed-white-background.jpg" alt="Dr. Raj Mehta">
+                        <h5>Dr. Raj Mehta</h5>
+                        <p class="text-muted small">MBBS, General Physician</p>
+                        <a href="appointment.html" class="btn btn-outline-primary btn-sm">Offline Consultation - Book Appointment</a>
+                        <a href="tel:+911234567891" class="btn btn-outline-primary btn-sm">📞 Call</a>
+                        <a href="https://meet.google.com/xyz-1234-abc" target="_blank" class="btn btn-outline-success btn-sm">🎥 Video</a>
+                    </div>
+
+                    <div class="doctor-card">
+                        <img src="./image/healthcare-workers-preventing-virus-quarantine-campaign-concept-cheerful-friendly-asian-female-physician-doctor-with-clipboard-daily-checkup-standing-white-background_1258-107867.jpg.avif" alt="Dr. Nisha Verma">
+                        <h5>Dr. Nisha Verma</h5>
+                        <p class="text-muted small">MD - Pediatrics</p>
+                        <a href="appointment.html" class="btn btn-outline-primary btn-sm">Offline Consultation - Book Appointment</a>
+                        <a href="tel:+911234567892" class="btn btn-outline-primary btn-sm">📞 Call</a>
+                        <a href="https://meet.google.com/def-hijk-lmn" target="_blank" class="btn btn-outline-success btn-sm">🎥 Video</a>
+                    </div>
+
+                    <div class="doctor-card">
+                        <img src="./image/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg.avif" alt="Dr. Tanushee Soel">
+                        <h5>Dr. Tanushee Soel</h5>
+                        <p class="text-muted small">MD - ENT</p>
+                        <a href="appointment.html" class="btn btn-outline-primary btn-sm">Offline Consultation - Book Appointment</a>
+                        <a href="tel:+911234567893" class="btn btn-outline-primary btn-sm">📞 Call</a>
+                        <a href="https://meet.google.com/ghi-jklm-nop" target="_blank" class="btn btn-outline-success btn-sm">🎥 Video</a>
+                    </div>
+
+                    <div class="doctor-card">
+                        <img src="./image/optimistic-older-age-female-doctor-pose-uniform-clinic-confident-therapist-gp-medical-office-motivated-senior-woman-340185980.jpg.webp" alt="Dr. Avani Paranjape">
+                        <h5>Dr. Avani Paranjape</h5>
+                        <p class="text-muted small">MD - Orthopedic</p>
+                        <a href="appointment.html" class="btn btn-outline-primary btn-sm">Offline Consultation - Book Appointment</a>
+                        <a href="tel:+911234567894" class="btn btn-outline-primary btn-sm">📞 Call</a>
+                        <a href="https://meet.google.com/qrs-tuvw-xyz" target="_blank" class="btn btn-outline-success btn-sm">🎥 Video</a>
+                    </div>
+
+                    <div class="doctor-card">
+                        <img src="./image/Mihir.jpg" alt="Dr. Mihir Lokandwala">
+                        <h5>Dr. Mihir Lokandwala</h5>
+                        <p class="text-muted small">MD - Dentistry</p>
+                        <a href="appointment.html" class="btn btn-outline-primary btn-sm">Offline Consultation - Book Appointment</a>
+                        <a href="tel:+911234567895" class="btn btn-outline-primary btn-sm">📞 Call</a>
+                        <a href="https://meet.google.com/uvw-xyz-abc" target="_blank" class="btn btn-outline-success btn-sm">🎥 Video</a>
+                    </div>
+                </div>
+                
+                <div class="scroll-arrow scroll-left" onclick="scrollDoctors(-300)">
+                    <i class="bi bi-chevron-left"></i>
+                </div>
+                <div class="scroll-arrow scroll-right" onclick="scrollDoctors(300)">
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+  <footer class="bg-primary text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>About CliniQ</h5>
+                    <p>Making healthcare accessible, affordable, and convenient through innovative technology solutions.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="index.html" class="text-white">Services</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                        <li><a href="privacy.html" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i> ITVedant Dadar Mumbai-400501</li>
+                        <li><i class="bi bi-telephone me-2"></i> (123) 456-7890</li>
+                        <li><i class="bi bi-envelope me-2"></i> info@cliniq.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 CliniQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
